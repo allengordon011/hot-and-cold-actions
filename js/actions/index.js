@@ -5,7 +5,6 @@
 
 export const NUMBER_GEN = 'NUMBER_GEN';
 export const numberGen = () => ({
-
   type: NUMBER_GEN,
   number:  Math.floor((Math.random() * 100) + 1)
 });
@@ -16,14 +15,8 @@ export const submitGuess = guess => ({
   guess
 });
 
-export const HOT_OR_COLD = 'HOT_OR_COLD';
-export const hotOrCold = temp => ({
-  type: HOT_OR_COLD,
-  temp
-});
-
-export const END_GAME = 'END_GAME';
-export const endGame = end => ({
-  type: END_GAME,
-  end
+export const NEW_GAME = 'NEW_GAME';
+export const newGame = () => ({
+  type: NEW_GAME,
+  
 });
