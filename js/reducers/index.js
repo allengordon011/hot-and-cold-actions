@@ -8,16 +8,20 @@ export const hotOrColdReducer = (state=initialHotOrColdState, action) => {
     return [...state, {
       secretNumber: number
     }];
-  } //when do we generate new number ?
-  console.log(state);
-//   if (action.type === actions.SUBMIT_GUESS) {
-//     //get input and compare to secretNumber
-//     return [...state, {
-//       guess: guess
-//     }];
-//     if (guess !== state[0].secretNumber) {
-//
-//     };
-//
   }
+  if (action.type === actions.SUBMIT_GUESS) {
+    //get input and compare to secretNumber
+    return [...state, {
+      guess: action.guess
+    }];
+    if (guess !== state[0].secretNumber) {
+      console.log("WRONG! (hotOrCold)");
+    };
+    else if (guess === state[0].secretNumber {
+      console.log("RIGHT! (endGame)");
+    })
+  }
+  else throw console.error();
+  
+  return state;
  }
