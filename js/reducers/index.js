@@ -10,6 +10,8 @@ export const hotOrColdReducer = (state=initialHotOrColdState, action) => {
     }];
   } //when do we generate new number ?
   else if (action.type === actions.SUBMIT_GUESS) {
-
+    //get input and compare to secretNumber
+    //onSubmit?
+    // guess === 
   }
 }
