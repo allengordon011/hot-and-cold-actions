@@ -4,9 +4,10 @@
 //action tells player they've won and option to start a new game
 
 export const NUMBER_GEN = 'NUMBER_GEN';
-export const numberGen = number => ({
+export const numberGen = () => ({
+
   type: NUMBER_GEN,
-  number
+  number:  Math.floor((Math.random() * 100) + 1)
 });
 
 export const SUBMIT_GUESS = 'SUBMIT_GUESS';

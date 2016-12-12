@@ -8,6 +8,9 @@ let unsubscribe = store.subscribe(() =>
 )
 store.dispatch(actions.numberGen());
 store.dispatch(actions.submitGuess(34));
-
+store.dispatch(actions.submitGuess(65));
+store.dispatch(actions.submitGuess(85));
 
 unsubscribe();
+window.store = store;
+window.actions = actions;

@@ -1,27 +1,36 @@
 import * as actions from '../actions/index';
 
-const initialHotOrColdState = [];
+const initialHotOrColdState = {
+  secretNumber: 0,
+  guess: [],
+  message: ''
+};
 
 export const hotOrColdReducer = (state=initialHotOrColdState, action) => {
   if (action.type === actions.NUMBER_GEN) {
-    let number = Math.floor((Math.random() * 100) + 1);
-    return [...state, {
-      secretNumber: number
-    }];
+
+    return {...state,
+      secretNumber: action.number
+    };
   }
   if (action.type === actions.SUBMIT_GUESS) {
-    //get input and compare to secretNumber
-    return [...state, {
-      guess: action.guess
-    }];
-    if (guess !== state[0].secretNumber) {
-      console.log("WRONG! (hotOrCold)");
+    console.log(action.type, action.guess);
+    console.log(state.secretNumber);
+    // if (action.guess !== state.secretNumber) {
+    //     ("WRONG! (hotOrCold)");
+    //   }
+    //   else if (action.guess === state.secretNumber) {
+    //     console.log("RIGHT! (endGame)");
+    //   }
+
+    return {...state,
+      guess: [...state.guess ,action.guess],
+      message:'You guessed!!'
     };
-    else if (guess === state[0].secretNumber {
-      console.log("RIGHT! (endGame)");
-    })
   }
-  else throw console.error();
-  
+
+
+  // else throw console.error();
+
   return state;
  }
